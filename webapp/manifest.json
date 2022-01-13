@@ -1,0 +1,136 @@
+{
+    "_version": "1.32.0",
+    "sap.app": {
+        "id": "com.itsgrp.brz.jornada",
+        "type": "application",
+        "i18n": "i18n/i18n.properties",
+        "applicationVersion": {
+            "version": "1.0.0"
+        },
+        "title": "{{appTitle}}",
+        "description": "{{appDescription}}",
+        "resources": "resources.json",
+        "ach": "ach",
+        "dataSources": {
+            "c4codataapi": {
+                "uri": "/http/call/odata/",
+                "type": "OData",
+                "settings": {
+                    "odataVersion": "2.0",
+                    "annotations": [],
+                    "localUri": "localService/metadata.xml"
+                }           
+            }
+        },
+        "crossNavigation": {
+            "inbounds": {
+                "com-itsgrp-brz-jornada-inbound": {
+                    "signature": {
+                        "parameters": {},
+                        "additionalParameters": "allowed"
+                    },
+                    "semanticObject": "jornada",
+                    "action": "create",
+                    "title": "{{flpTitle}}",
+                    "subTitle": "{{flpSubtitle}}",
+                    "icon": ""
+                }
+            }
+        }
+    },
+    "sap.ui": {
+        "technology": "UI5",
+        "icons": {
+            "icon": "sap-icon://paper-plane",
+            "favIcon": "",
+            "phone": "",
+            "phone@2": "",
+            "tablet": "",
+            "tablet@2": ""
+        },
+        "deviceTypes": {
+            "desktop": true,
+            "tablet": true,
+            "phone": true
+        }
+    },
+    "sap.ui5": {
+        "flexEnabled": false,
+        "rootView": {
+            "viewName": "com.itsgrp.brz.jornada.view.App",
+            "type": "XML",
+            "async": true,
+            "id": "App"
+        },
+        "dependencies": {
+            "minUI5Version": "1.66.0",
+            "libs": {
+                "sap.ui.unified": {},
+                "sap.ui.core": {},
+                "sap.m": {},
+                "sap.ui.layout": {}
+            }
+        },
+        "contentDensities": {
+            "compact": true,
+            "cozy": true
+        },
+        "models": {
+            "i18n": {
+                "type": "sap.ui.model.resource.ResourceModel",
+                "settings": {
+                    "bundleName": "com.itsgrp.brz.jornada.i18n.i18n"
+                }
+            },
+            "c4codataapi": {
+                "dataSource": "c4codataapi",
+                "preload": true,
+                "settings": {
+                    "defaultCountMode": "Inline"
+                }
+            }
+        },
+        "resources": {
+            "css": [
+                {
+                    "uri": "css/style.css"
+                }
+            ]
+        },
+        "routing": {
+            "config": {
+                "routerClass": "sap.m.routing.Router",
+                "viewType": "XML",
+                "async": true,
+                "viewPath": "com.itsgrp.brz.jornada.view",
+                "controlAggregation": "pages",
+                "controlId": "App",
+                "clearControlAggregation": false,
+                "viewLevel": 0
+            },
+            "routes": [
+                {
+                    "name": "RouteList",
+                    "pattern": "",
+                    "target": [
+                        "TargetList"
+                    ]
+                }
+            ],
+            "targets": {
+                "TargetList": {
+                    "viewType": "XML",
+                    "transition": "slide",
+                    "clearControlAggregation": false,
+                    "viewId": "Main",
+                    "viewLevel": 0,
+                    "viewName": "Main"
+                }
+            }
+        }
+    },
+    "sap.cloud": {
+        "public": true,
+        "service": "jornada"
+    }
+}

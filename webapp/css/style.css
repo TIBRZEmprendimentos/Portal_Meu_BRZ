@@ -1,0 +1,6 @@
+/* Enter your custom styles here */
+@media screen and (max-width: 600px) {
+    .FormContainer1 .sapUiFormResGridCont {
+        padding-bottom: 0.8rem!important;
+    }
+}

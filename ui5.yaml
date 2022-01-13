@@ -1,0 +1,29 @@
+specVersion: '2.4'
+metadata:
+  name: 'its-brzjornadas'
+type: application
+resources:
+  configuration:
+    propertiesFileSourceEncoding: UTF-8
+server:
+  customMiddleware:
+  - name: fiori-tools-proxy
+    afterMiddleware: compression
+    configuration:
+      ignoreCertError: false # If set to true, certificate errors will be ignored. E.g. self-signed certificates will be accepted
+      backend:
+      - path: /http
+        url: https://cpi-brz-dev.it-cpi008-rt.cfapps.br10.hana.ondemand.com
+      ui5:
+        path: 
+        - /1.91.0
+        - /resources
+        - /test-resources
+        url: https://ui5.sap.com
+        version:  ""
+  - name: fiori-tools-appreload
+    afterMiddleware: compression
+    configuration:
+     port: 35729
+     path: webapp
+

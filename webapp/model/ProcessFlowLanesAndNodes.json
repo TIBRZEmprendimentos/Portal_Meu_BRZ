@@ -1,0 +1,358 @@
+{
+	"nodes": [
+		{
+			"id": "10",
+			"lane": "0",
+			"title": "Atualização de Cadastro",
+			"titleAbbreviation": "Atu",
+			"state": "Positive",
+			"stateText": "OK",
+			"focused": true,
+			"children": [ 20 ],
+			"highlighted": false,
+			"quickView": {
+				"pageId": "detailPageId",
+				"header": "Detalhes Etapa",
+				"icon": "sap-icon://order-status",
+				"title": "Cadastro",
+				"description": "Preenchimento de Dados Pessoais",
+				"groups": [
+					{
+						"heading": "Atualização Cadastral",
+						"elements": [
+							{
+								"value": "Estes dados serão utilizados durante todo o processo de Simulação e Aquisição do seu Apartamento BRZ. É de extrema importância manter estes dados atualizados garantindo a total integridade destes. ",
+								"url": null,
+								"elementType": null,
+								"emailSubject": null
+							}
+						]
+					}
+				]
+			}
+		},		 
+		{
+			"id": "20",
+			"lane": "1",
+			"title": "Simulação BRZ",
+			"titleAbbreviation": "Sim",
+			"children": [ 21 ],
+			"state": "Positive",
+			"stateText": "OK",
+			"focused": false,
+			"highlighted": false,
+			"texts": null,
+			"quickView": {
+				"pageId": "detailPageId",
+				"header": "Detalhes Etapa",
+				"icon": "sap-icon://documents",
+				"title": "Documentação",
+				"description": "Recebidmento da documentação necessária para continuidade do processo",
+				"groups": [
+					{
+						"heading": "Envio de Documentação",
+						"elements": [
+							{
+								"value": "Você esta em uma processo de financiamento, para este tipo de processo precisamos da documentação abaixo, os itens em Verde já estão entregues para os em vermelho ainda é ncessário o envio: [LISTA DOCUMENTAÇÃO OBRIGATÓRIA]",
+								"url": "http://nba.com",
+								"elementType": null,
+								"emailSubject": null
+							}
+						]
+					}
+				]
+			}
+		}, {
+			"id": "21",
+			"lane": "2",
+			"title": "Envio de Documentação",
+			"titleAbbreviation": "Doc Cli",
+			"children": [ 30 ],
+			"state": "Critical",
+			"stateText": "AÇÃO DO USUÁRIO",
+			"focused": false,
+			"highlighted": false,
+			"texts": [ "Aguardando envio de documentação complementar" ],
+			"quickView": {
+				"pageId": "detailPageId",
+				"header": "Detalhes Etapa",
+				"icon": "sap-icon://simulate",
+				"title": "Simulação",
+				"description": "Determinação de valores prévios para análise de crédito",
+				"groups": [
+					{
+						"heading": "Simulação BRZ",
+						"elements": [
+							{
+								"value": "Aguarde contato da BRZ para que em conjunto formalizemos todas as informações pertinentes para a simulação a fim de definir o tipo de compra  a ser executada. RESULTADO DA SIMULAÇÃO determinando tipo de venda",
+								"url": null,
+								"elementType": null,
+								"emailSubject": null
+							}
+						]
+					}
+				]
+			}			
+		},
+		{
+			"id": "30",
+			"lane": "3",
+			"title": "Análise de Crédito",
+			"titleAbbreviation": "AnCred",
+			"children": [ 41 ],
+			"state": "Neutral",
+			"stateText": "Não Iniciado",
+			"focused": false,	
+			"highlighted": false,
+			"texts": null,
+			"quickView": {
+				"pageId": "detailPageId",
+				"header": "Detalhes Etapa",
+				"icon": "sap-icon://payment-approval",
+				"title": "Análise de Crédito",
+				"description": "Processo de análise de Crédito do Cliente",
+				"groups": [
+					{
+						"heading": "Análise de Crédito",
+						"elements": [
+							{
+								"value": "Aguarde finalização de Análise de Crédito",
+								"url": "",
+								"elementType": null,
+								"emailSubject": null
+							}
+						]
+					}
+				]
+			}			
+		},{
+			"id": "41",
+			"lane": "4",
+			"title": "Análise Proposta",
+			"titleAbbreviation": "PD 75",
+			"children": [ 51 ],
+			"state": "Neutral",
+			"stateText": "Não Iniciado",
+			"focused": false,
+			"highlighted": false,
+			"texts": null,
+			"quickView": {
+				"pageId": "detailPageId",
+				"header": "Detalhes Etapa",
+				"icon": "sap-icon://form",
+				"title": "Proposta",
+				"description": "Aqui temos os valores finais de negociação que serão utilizados no contrato",
+				"groups": [
+					{
+						"heading": "Análise de Proposta",
+						"elements": [
+							{
+								"value": "A BRZ fará uma análise dos valores propostos e irá aprovar/rejeitar proposta baseada nas informações de Simulação e Documentação. [VERIFICAR POSSIBILIDADE DE ABRIR CONTRA PROPOSTA POR PARTE DO CLIENTE]",
+								"url": "",
+								"elementType": null,
+								"emailSubject": null
+							}
+						]
+					}
+				]
+			}		
+		},	
+		{
+			"id": "51",
+			"lane": "5",
+			"children": [ 52 ],
+			"title": "Assinatura BRZ",
+			"titleAbbreviation": "AssBRZ",
+			"state": "Neutral",
+			"stateText": "Não Iniciado",
+			"focused": false,
+			"highlighted": false,
+			"texts": null,
+			"quickView": {
+				"pageId": "detailPageId",
+				"header": "Detalhes Etapa",
+				"icon": "sap-icon://signature",
+				"title": "Assinatura",
+				"description": "Coleta de todas as assinaturas necessárias para fechamento do contrato",
+				"groups": [
+					{
+						"heading": "Assinatura BRZ",
+						"elements": [
+							{
+								"value": "Acompanhamento do processo de assinatura para cada uma das partes: Assinatura Cliente Assinatura BRZ Assinatura Testemunha [ENCAMINHAR DOCSIGN]",
+								"url": "",
+								"elementType": null,
+								"emailSubject": null
+							}
+						]
+					}
+				]
+			}			
+		},
+		{
+			"id": "52",
+			"lane": "5",
+			"children": [ 61, 53 ],
+			"title": "Assinatura CEF",
+			"titleAbbreviation": "AssCEF",
+			"state": "Neutral",
+			"stateText": "Não Iniciado",
+			"focused": false,
+			"highlighted": false,
+			"texts": null,
+			"quickView": {
+				"pageId": "detailPageId",
+				"header": "Detalhes Etapa",
+				"icon": "sap-icon://signature",
+				"title": "Assinatura",
+				"description": "Coleta de todas as assinaturas necessárias para fechamento do contrato",
+				"groups": [
+					{
+						"heading": "Assinatura BRZ",
+						"elements": [
+							{
+								"value": "Processo de financiamento na Caixa Economica Federal, onde iremos passar pelas seguintes sub-etapas: Assinatura formulário Caixa; Agendada assinatura Caixa; Contrato Caixa assinado;",
+								"url": "",
+								"elementType": null,
+								"emailSubject": null
+							}
+						]
+					}
+				]
+			}						
+		},
+		{
+			"id": "53",
+			"lane": "5",
+			"title": "Registro Contrato",
+			"titleAbbreviation": "RegCon",
+			"state": "Neutral",
+			"stateText": "Não Iniciado",
+			"focused": false,
+			"highlighted": false,
+			"texts": null,
+			"quickView": {
+				"pageId": "detailPageId",
+				"header": "Detalhes Etapa",
+				"icon": "sap-icon://signature",
+				"title": "Assinatura",
+				"description": "Coleta de todas as assinaturas necessárias para fechamento do contrato",
+				"groups": [
+					{
+						"heading": "Registro Contrato",
+						"elements": [
+							{
+								"value": " Para o registro do Contrato iremos percorrer as seguintes tarefas: ITBI (Prefeitura) Entregue ao Cartório para Registro; Registrado; Contrato disponível para retirada  Contrato entregue ",
+								"url": "",
+								"elementType": null,
+								"emailSubject": null
+							}
+						]
+					}
+				]
+			}						
+		},		
+		{
+			"id": "61",
+			"lane": "6",
+			"children": [ 62 ],
+			"title": "Entrega Empreendimento",
+			"titleAbbreviation": "EntEmpre",
+			"state": "Neutral",
+			"stateText": "Não Iniciado",
+			"focused": false,
+			"highlighted": false,
+			"texts": null,
+			"quickView": {
+				"pageId": "detailPageId",
+				"header": "Detalhes Etapa",
+				"icon": "sap-icon://primary-key",
+				"title": "Entrega",
+				"description": "Conclusão da Jornada do Cliente",
+				"groups": [
+					{
+						"heading": "Entrega Empreendimento",
+						"elements": [
+							{
+								"value": "Status de conclusão do Empreendimento %conclusão C4c",
+								"url": "",
+								"elementType": null,
+								"emailSubject": null
+							}
+						]
+					}
+				]
+			}						
+		},
+		{
+			"id": "62",
+			"lane": "6",
+			"title": "Entrega de Chaves",
+			"titleAbbreviation": "PrevEnt",
+			"state": "Neutral",
+			"stateText": "Não Iniciado",
+			"focused": false,
+			"highlighted": false,
+			"texts": null,
+			"quickView": {
+				"pageId": "detailPageId",
+				"header": "Detalhes Etapa",
+				"icon": "sap-icon://primary-key",
+				"title": "Entrega",
+				"description": "Conclusão da Jornada do Cliente",
+				"groups": [
+					{
+						"heading": "Entrega Chaves",
+						"elements": [
+							{
+								"value": "Fique atentoaos pontos abaixo: Previsão de Entrega (Data que esta contrato + 36 meses) Status de Entrega - Não entregue(Inadinplencia, sem fiador, sem registro) Por favor entre em contato com GCC, clique aqui para abrir ocorrência",
+								"url": "http://teste",
+								"elementType": null,
+								"emailSubject": null
+							}
+						]
+					}
+				]
+			}				
+		}								
+	],
+	"lanes": [
+		{
+			"id": "0",
+			"icon": "sap-icon://order-status",
+			"label": "Cadastro",
+			"position": 0
+		}, {
+			"id": "1",
+			"icon": "sap-icon://simulate",
+			"label": "Simulação",
+			"position": 1
+		}, {
+			"id": "2",
+			"icon": "sap-icon://documents",
+			"label": "Documentação",
+			"position": 2
+		}, {
+			"id": "3",
+			"icon": "sap-icon://payment-approval",
+			"label": "Crédito",
+			"position": 3
+		}, {
+			"id": "4",
+			"icon": "sap-icon://form",
+			"label": "Proposta",
+			"position": 4
+		}, {
+			"id": "5",
+			"icon": "sap-icon://signature",
+			"label": "Assinatura",
+			"position": 5
+		},
+		{
+			"id": "6",
+			"icon": "sap-icon://primary-key",
+			"label": "Entrega",
+			"position": 6
+		}		
+	]
+}

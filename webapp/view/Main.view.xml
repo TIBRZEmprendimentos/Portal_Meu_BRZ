@@ -1,0 +1,39 @@
+<mvc:View
+	xmlns:mvc="sap.ui.core.mvc"
+	xmlns:m="sap.m"
+	xmlns="sap.suite.ui.commons"
+	controllerName="com.itsgrp.brz.jornada.controller.Main">
+	<m:Panel headerText="{i18n>Mensagem}">
+		<m:HBox renderType="Bare">		
+		<m:ProgressIndicator
+				class="sapUiSmallMarginBottom"
+				percentValue="80"
+				displayValue="80%"
+				showValue="true"
+				state="Success" />					
+		</m:HBox>
+		<ProcessFlow id="processFlowJornada" 
+					scrollable="true" 
+					nodePress="onNodePress" 
+					nodeTitlePress="onNodeTitlePress" 
+					nodes="{/nodes}" 
+					lanes="{/lanes}">
+      <nodes>
+        <ProcessFlowNode 	laneId="{lane}" 
+							nodeId="{id}" 
+							title="{title}" 
+							titleAbbreviation = "{titleAbbreviation}" 
+							isTitleClickable = "{isTitleClickable}" 
+							children="{children}" 
+							state="{state}" 
+							stateText="{stateText}" 
+							texts="{texts}" 
+							highlighted="{highlighted}" 
+							focused="{focused}"/>
+      </nodes>
+      <lanes>
+        <ProcessFlowLaneHeader sId="{id}" laneId="{id}" iconSrc="{icon}" text="{label}" position="{position}" press=".onPress($event, ${id})"/>
+      </lanes>
+    </ProcessFlow>		
+	</m:Panel>
+</mvc:View>
