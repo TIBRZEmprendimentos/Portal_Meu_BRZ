@@ -1,0 +1,144 @@
+<mvc:View
+    controllerName="com.itsgrp.brz.jornada.controller.ListReport"
+    displayBlock="true"
+    xmlns="sap.m"
+	xmlns:mvc="sap.ui.core.mvc"
+	xmlns:f="sap.f"
+	xmlns:fb="sap.ui.comp.filterbar"
+	height="100%"
+>
+	<f:DynamicPage id="synamicPage" >
+
+		<f:header>
+			<f:DynamicPageHeader>
+				<f:content>
+					<fb:FilterBar 
+						id="filterbar" 
+						reset="onReset" 
+						search="onSearch" 
+						useToolbar="false" 
+						showRestoreOnFB="true">
+						<fb:filterGroupItems>
+							<fb:FilterGroupItem 
+								name="ID" 
+								groupName="__$INTERNAL$" 
+								label="{i18n>ListView.ID}" 
+								labelTooltip="{i18n>ListView.ID}" 
+								visibleInFilterBar="true">
+								<fb:control>
+									<Input name="ID" change="onChangeFilter" />
+								</fb:control>
+							</fb:FilterGroupItem>
+
+							<fb:FilterGroupItem 
+								name="Name" 
+								groupName="__$INTERNAL$" 
+								label="{i18n>ListView.NameOcorrencia}" 
+								labelTooltip="{i18n>ListView.NameOcorrencia}"
+								visibleInFilterBar="true">
+								<fb:control>
+									<Input name="Name" change="onChangeFilter" />
+								</fb:control>
+							</fb:FilterGroupItem>
+							<fb:FilterGroupItem 
+								name="SalesCycleCodeText" 
+								groupName="__$INTERNAL$" 
+								label="{i18n>ListView.SalesCycleCodeText}" 
+								labelTooltip="{i18n>ListView.SalesCycleCodeText}" 
+								visibleInFilterBar="true">
+								<fb:control>
+									<Input name="SalesCycleCodeText" change="onChangeFilter" />
+								</fb:control>
+							</fb:FilterGroupItem>
+							<fb:FilterGroupItem 
+								name="MainEmployeeResponsiblePartyName" 
+								groupName="__$INTERNAL$" 
+								label="{i18n>ListView.MainEmployeeResponsiblePartyName}" 
+								labelTooltip="{i18n>ListView.MainEmployeeResponsiblePartyName}"
+								visibleInFilterBar="true">
+								<fb:control>
+									<Input name="MainEmployeeResponsiblePartyName" change="onChangeFilter" />
+								</fb:control>
+							</fb:FilterGroupItem>
+							<fb:FilterGroupItem 
+								name="SalesUnityPartyName" 
+								groupName="__$INTERNAL$" 
+								label="{i18n>ListView.SalesUnityPartyName}" 
+								labelTooltip="{i18n>ListView.SalesUnityPartyName}" 
+								visibleInFilterBar="true">
+								<fb:control>
+									<Input name="SalesUnityPartyName" change="onChangeFilter" />
+								</fb:control>
+							</fb:FilterGroupItem>
+
+						</fb:filterGroupItems>
+
+					</fb:FilterBar>
+
+				</f:content>
+			</f:DynamicPageHeader>
+		</f:header>
+		<f:content>
+			<Table
+				id="ServiceRequest"
+				width="auto" 
+				noDataText="{i18n>ListView.NoData}" 
+				growing="true" 
+				growingScrollToLoad="true" 
+				items="{
+					path: 'odata>/'
+				}" > 
+				<infoToolbar>
+					<Toolbar width="100%" id="vsdFilterBar" visible="false"> <!--Aonde é escrito o filtro em baixo do header da table-->
+						<content>
+							<Label id="vsdFilterLabel"/>
+						</content>
+					</Toolbar>
+				</infoToolbar>
+				<headerToolbar>
+					<OverflowToolbar design="Transparent">
+						<content>
+							<Title text="Items ({local>/count})" textAlign="Begin" id="titleCount" />
+							<ToolbarSpacer/>
+							<!-- <OverflowToolbarButton icon="sap-icon://add"  tooltip="Adicionar" text="{i18n>ListView.Adicionar}" press="onAdd"/> -->
+							<OverflowToolbarButton text="{i18n>ListView.Settings}" type="Transparent" icon="sap-icon://action-settings" iconDensityAware="false" press="onPersoButtonPressed"/>
+						</content>
+					</OverflowToolbar>
+				</headerToolbar>
+				<columns>
+					
+					<Column id="ID" popinDisplay="Inline" width="auto" demandPopin="true" minScreenWidth="Tablet" >
+						<Text text="{i18n>ListView.ID}"/>
+					</Column>
+					<Column id="Name" popinDisplay="Inline" width="20rem" demandPopin="true" minScreenWidth="Tablet" >
+						<Text text="{i18n>ListView.NameOcorrencia}"/>
+					</Column>
+					<Column id="SalesCycleCodeText" popinDisplay="Inline" width="auto" demandPopin="true" minScreenWidth="Tablet" >
+						<Text text="{i18n>ListView.SalesCycleCodeText}"/>
+					</Column>
+					<Column id="MainEmployeeResponsiblePartyName" popinDisplay="Inline" width="auto" demandPopin="true" minScreenWidth="Tablet" >
+						<Text text="{i18n>ListView.MainEmployeeResponsiblePartyName}"/>
+					</Column>
+					<Column id="SalesUnityPartyName" popinDisplay="Inline" width="auto" demandPopin="true" minScreenWidth="Tablet" >
+						<Text text="{i18n>ListView.SalesUnityPartyName}"/>
+					</Column>
+				</columns>   
+				<items>
+					<ColumnListItem 
+						type="Navigation"
+						press="onNavigate">
+						<cells>
+							<Text text="{odata>ID}" width="auto"  />
+							<Text text="{odata>Name}" width="auto" />
+							<Text text="{odata>SalesCycleCodeText} ({odata>SalesCycleCode})" width="auto" />
+							<Text text="{odata>MainEmployeeResponsiblePartyName}" width="auto" />
+							<Text text="{odata>SalesUnityPartyName}" width="auto" />
+						</cells>
+					</ColumnListItem>
+				</items>     
+			</Table>
+		</f:content>
+
+	</f:DynamicPage>
+
+</mvc:View>

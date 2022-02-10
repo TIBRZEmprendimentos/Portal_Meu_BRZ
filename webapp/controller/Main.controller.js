@@ -38,7 +38,7 @@ sap.ui.define([
 				var userInfo = sap.ushell.Container.getService("UserInfo");
 				var email = userInfo.getEmail();
 
-				if(email = "undefined" || email === "")
+				if (email === undefined || email === "")
 				{
 					email = "orioncastelli@gmail.com";
 				}
@@ -60,7 +60,7 @@ sap.ui.define([
 				sap.ui.core.BusyIndicator.hide();
 			},
 
-			_loadFlowUI: function (view) {
+			_loadFlowUI: function () {
 				var oView = this.getView();			
 				
                 var sRootPath = this.getOwnerComponent().getModel("rootPath").getProperty("/path");

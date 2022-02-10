@@ -82,6 +82,10 @@
                     "bundleName": "com.itsgrp.brz.jornada.i18n.i18n"
                 }
             },
+            "": {
+                "preload": true,
+                "dataSource": "c4codataapi"
+            },
             "c4codataapi": {
                 "dataSource": "c4codataapi",
                 "preload": true,
@@ -111,9 +115,16 @@
             "routes": [
                 {
                     "name": "RouteList",
-                    "pattern": "",
+                    "pattern": "TargetList",
                     "target": [
                         "TargetList"
+                    ]
+                },
+                {
+                    "name": "ListReport",
+                    "pattern": "",
+                    "target": [
+                        "ListReport"
                     ]
                 }
             ],
@@ -123,8 +134,16 @@
                     "transition": "slide",
                     "clearControlAggregation": false,
                     "viewId": "Main",
-                    "viewLevel": 0,
+                    "viewLevel": 1,
                     "viewName": "Main"
+                },
+                "ListReport": {
+                    "viewType": "XML",
+                    "transition": "slide",
+                    "clearControlAggregation": false,
+                    "viewId": "ListReport",
+                    "viewLevel": 0,
+                    "viewName": "ListReport"
                 }
             }
         }

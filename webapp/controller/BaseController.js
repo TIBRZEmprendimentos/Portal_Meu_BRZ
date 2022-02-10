@@ -57,6 +57,43 @@ sap.ui.define([
                 return sap.ui.getCore().getModel(sPath);
             },
 
+            getServices: async function (sService, oParams) {
+                let oMethodCall, aReturnGet, sParams;
+
+                sParams = this._configParams(oParams);
+                oMethodCall = this._callServicesGet(sService,`c4c?${sParams}`);
+                aReturnGet = await oMethodCall.method('GET')
+                sap.ui.core.BusyIndicator.hide();   
+                return aReturnGet;
+            },
+
+            _callServicesGet: function (sServiceName, sCallMockC4c) {
+                var oModel = this.getOwnerComponent().getModel();
+                var sUrlService = oModel.sServiceUrl;
+                
+                let oHeader = {
+                    "Content-Type": "application/json",
+                    "Accept": "application/json",
+                    "entidade": sServiceName
+                }
+
+                return {
+                    method: async (sMethod) => {
+
+                        let oResponse = await fetch(
+                            `${sUrlService}/${sCallMockC4c}`,
+                            {
+                                method: sMethod.toUpperCase(),
+                                headers: oHeader
+                            }
+                        ).then((response) => response.text())
+                            .catch((err) => err);
+
+                        return JSON.parse(oResponse);
+                    }
+                }
+            },
+
             getServicesID: function (key) {
                 var oModel = this.getOwnerComponent().getModel();
                 var sUrlService = '/http/poc/getuser/v2';
@@ -90,6 +127,29 @@ sap.ui.define([
                         return oResponse;
                     }
                 }
+            },
+
+
+            _configParams: function (oParams) {
+                let sTextReturn, aReturn = [];
+
+                if (oParams.filter) {
+                    aReturn.push(oParams.filter);
+                }
+                if (oParams.select) {
+                    aReturn.push(oParams.select);
+                }
+                if (oParams.expand) {
+                    aReturn.push(oParams.expand);
+                }
+                if (oParams.language) {
+                    aReturn.push(oParams.language);
+                }
+
+                aReturn.push("$format=json");
+                sTextReturn = aReturn.join("&");
+
+                return sTextReturn;
             }
      
         });
