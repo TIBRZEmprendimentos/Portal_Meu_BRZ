@@ -74,8 +74,9 @@ sap.ui.define([
 				let res = jQuery.parseXML(sXMLID);
 				let id = res.getElementsByTagName("id")[0];
 					
-				oDados.C4CId = id.innerHTML;
+				// oDados.C4CId = id.innerHTML;
 				// oDados.C4CId = '1008689';
+				oDados.C4CId = '1010117';
 
 
 				let aDados = await this.getServices("OpportunityCollection", {
@@ -166,8 +167,13 @@ sap.ui.define([
                 this._oTPC.savePersonalizations();
             },
 
-			onNavigate: function() {
-				this.getRouter().navTo("RouteList");
+			onNavigate: function(oEvent) {
+				let oList = oEvent.getSource(),
+					oItem = oList.getBindingContext("odata").getObject();
+
+				this.getRouter().navTo("RouteList", {
+					id: oItem.ID
+				});
 			},
 
 			onExit: function () {

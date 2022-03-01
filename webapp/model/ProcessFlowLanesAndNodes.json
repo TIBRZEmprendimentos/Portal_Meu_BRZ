@@ -50,6 +50,16 @@
 				"description": "Recebidmento da documentação necessária para continuidade do processo",
 				"groups": [
 					{
+						"heading": "PREENCHER",
+						"elements": [
+							{
+								"value": "PREENCHER",
+								"elementType": null,
+								"emailSubject": null
+							}
+						]
+					},
+					{
 						"heading": "Envio de Documentação",
 						"elements": [
 							{
@@ -112,6 +122,16 @@
 				"title": "Análise de Crédito",
 				"description": "Processo de análise de Crédito do Cliente",
 				"groups": [
+					{
+						"heading": "PREENCHER",
+						"elements": [
+							{
+								"value": "PREENCHER",
+								"elementType": null,
+								"emailSubject": null
+							}
+						]
+					},
 					{
 						"heading": "Análise de Crédito",
 						"elements": [
@@ -179,7 +199,7 @@
 						"heading": "Assinatura BRZ",
 						"elements": [
 							{
-								"value": "Acompanhamento do processo de assinatura para cada uma das partes: Assinatura Cliente Assinatura BRZ Assinatura Testemunha [ENCAMINHAR DOCSIGN]",
+								"value": "Acompanhamento do processo de assinatura para cada uma das partes: \nAssinatura Cliente: ALTERARDATA1 \nAssinatura BRZ:  \nAssinatura Testemunha:  \n[ENCAMINHAR DOCSIGN]",
 								"url": "",
 								"elementType": null,
 								"emailSubject": null
@@ -274,7 +294,7 @@
 						"heading": "Entrega Empreendimento",
 						"elements": [
 							{
-								"value": "Status de conclusão do Empreendimento %conclusão C4c",
+								"value": "Conclusão do Empreendimento: ALTERARVALOR1%\nData de Entrega: ALTERARVALOR2\nStatus de Entrega: ALTERARVALOR3",
 								"url": "",
 								"elementType": null,
 								"emailSubject": null

@@ -115,7 +115,7 @@
             "routes": [
                 {
                     "name": "RouteList",
-                    "pattern": "TargetList",
+                    "pattern": "TargetList/{id}",
                     "target": [
                         "TargetList"
                     ]

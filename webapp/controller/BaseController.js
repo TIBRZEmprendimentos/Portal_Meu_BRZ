@@ -77,6 +77,12 @@ sap.ui.define([
                     "entidade": sServiceName
                 }
 
+                if (sServiceName === "SalesPhaseRootCollection") {
+                    oHeader.service = "cust/v1/z_fases_venda";
+                } else if (sServiceName === "ZStatusObraRootCollection") {
+                    oHeader.service = "cust/v1/z_salesorg_situobra";
+                }
+
                 return {
                     method: async (sMethod) => {
 
@@ -133,6 +139,9 @@ sap.ui.define([
             _configParams: function (oParams) {
                 let sTextReturn, aReturn = [];
 
+                if (oParams.top) {
+                    aReturn.push(oParams.top);
+                }
                 if (oParams.filter) {
                     aReturn.push(oParams.filter);
                 }
