@@ -142,7 +142,7 @@ sap.ui.define([
 			},
 
 			_loadFlowUI: async function (sUserId, oOportunity) {
-				sUserId = "1019542";
+				// sUserId = "1019542";
 				
 				var oView = this.getView();			
 				

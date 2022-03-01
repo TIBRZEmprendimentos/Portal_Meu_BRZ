@@ -74,9 +74,9 @@ sap.ui.define([
 				let res = jQuery.parseXML(sXMLID);
 				let id = res.getElementsByTagName("id")[0];
 					
-				// oDados.C4CId = id.innerHTML;
+				oDados.C4CId = id.innerHTML;
 				// oDados.C4CId = '1008689';
-				oDados.C4CId = '1010117';
+				// oDados.C4CId = '1010117';
 
 
 				let aDados = await this.getServices("OpportunityCollection", {
